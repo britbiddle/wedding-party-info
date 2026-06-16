@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali & Brit — Wedding Party Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1B3A5C;
+      --ocean:     #2E6B9E;
+      --blue:      #4A90C4;
+      --sky:       #A8D4EE;
+      --mist:      #DFF0F8;
+      --sand:      #F5EDD6;
+      --cream:     #FAFAF7;
+      --text:      #2C3E50;
+      --light-text:#5a6d7e;
+      --white:     #ffffff;
+      --radius:    12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      padding: 0 1rem;
+      box-shadow: 0 2px 12px rgba(27,58,92,.4);
+    }
+    nav a {
+      color: var(--sky);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: .75rem .7rem;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--white); border-bottom-color: var(--sky); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--ocean) 55%, var(--blue) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23ffffff08' d='M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z'/%3E%3Cpath fill='%23ffffff05' d='M0,80 C480,20 960,100 1440,40 L1440,120 L0,120 Z'/%3E%3C/svg%3E") bottom/100% auto no-repeat;
+    }
+    .hero-sub {
+      font-size: .9rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: .75rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: .02em;
+      line-height: 1.15;
+    }
+    .hero h1 em { font-style: italic; color: var(--sky); }
+    .hero-dates {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.85);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(168,212,238,.2);
+      border: 1px solid rgba(168,212,238,.4);
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-top: 1rem;
+    }
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      backdrop-filter: blur(4px);
+      border-radius: 999px;
+      padding: .55rem 1.25rem;
+      margin-top: 2rem;
+      font-size: .9rem;
+      color: var(--white);
+    }
+    .contact-badge strong { color: var(--sky); }
+
+    /* ── WAVE ── */
+    .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
+    .wave svg { display: block; width: 100%; }
+
+    /* ── LAYOUT ── */
+    .section {
+      padding: 4rem 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section + .section { padding-top: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .day-badge {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 999px;
+      padding: .3rem .9rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .section-header h2 span {
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ocean);
+    }
+
+    /* ── STRIPE BACKGROUNDS ── */
+    .stripe { padding: 3rem 0; }
+    .stripe .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .bg-mist  { background: var(--mist); }
+    .bg-sand  { background: var(--sand); }
+    .bg-white { background: var(--white); }
+
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 0 1.25rem;
+      padding: .65rem 0;
+      border-bottom: 1px solid rgba(74,144,196,.12);
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-time {
+      font-weight: 700;
+      color: var(--ocean);
+      font-size: .88rem;
+      padding-top: .1rem;
+      text-align: right;
+    }
+    .tl-title { font-weight: 700; color: var(--text); }
+    .tl-detail { color: var(--light-text); font-size: .9rem; margin-top: .15rem; }
+    .tl-detail ul { margin: .3rem 0 0 1.1rem; }
+    .tl-detail li { margin-bottom: .15rem; }
+    .tl-people {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-top: .35rem;
+    }
+    .chip {
+      background: var(--sky);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: .15rem .65rem;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .chip.highlight { background: var(--navy); color: var(--white); }
+    .chip.gold { background: #f0c040; color: #5a3e00; }
+
+    /* ── ALERT / INFO BOXES ── */
+    .alert {
+      background: #fff3cd;
+      border-left: 4px solid #f0a500;
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: .9rem;
+      margin-bottom: 1.25rem;
+    }
+    .alert strong { color: #7a5200; }
+
+    .info-box {
+      background: var(--mist);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      font-size: .92rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── BRIDESMAID JOBS ── */
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.5rem;
+    }
+    .job-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.35rem;
+      box-shadow: 0 2px 10px rgba(27,58,92,.08);
+      border-top: 4px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .job-card.featured { border-top-color: var(--navy); }
+    .job-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .job-title {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ocean);
+    }
+    .job-desc { font-size: .9rem; color: var(--text); }
+
+    /* ── MAP ── */
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,58,92,.15);
+      margin-top: 1.5rem;
+      border: 3px solid var(--sky);
+    }
+    .map-container img {
+      width: 100%;
+      display: block;
+    }
+    .map-legend {
+      background: var(--navy);
+      padding: .9rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.25rem;
+    }
+    .legend-item {
+      font-size: .8rem;
+      color: rgba(255,255,255,.85);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── GUIDELINES ── */
+    .guidelines { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+    .guidelines li {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: .9rem 1.1rem;
+      box-shadow: 0 1px 6px rgba(27,58,92,.06);
+      font-size: .93rem;
+    }
+    .guidelines li .icon {
+      flex-shrink: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: var(--mist);
+    }
+    .guidelines li.warn .icon { background: #fff3cd; }
+    .guidelines li.red  .icon { background: #fde8e8; }
+
+    /* ── NO-DRIVE BANNER ── */
+    .no-drive {
+      background: linear-gradient(135deg, var(--navy), var(--ocean));
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .no-drive h3 { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--sky); margin-bottom: .5rem; }
+    .no-drive ul { margin-left: 1.1rem; }
+    .no-drive li { font-size: .93rem; margin-bottom: .25rem; }
+
+    /* ── FIELD DAY SCHEDULE ── */
+    .fd-schedule {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(74,144,196,.2);
+      margin-bottom: 2.5rem;
+    }
+    .fd-row { display: grid; grid-template-columns: 5.5rem 1fr; }
+    .fd-row:nth-child(even) { background: rgba(168,212,238,.12); }
+    .fd-row.highlight-row { background: var(--navy); color: var(--white); }
+    .fd-time {
+      padding: .7rem 1rem;
+      font-weight: 700;
+      font-size: .83rem;
+      color: var(--ocean);
+      border-right: 1px solid rgba(74,144,196,.15);
+      display: flex;
+      align-items: center;
+    }
+    .fd-row.highlight-row .fd-time { color: var(--sky); border-right-color: rgba(255,255,255,.15); }
+    .fd-act { padding: .7rem 1.1rem; font-size: .93rem; }
+    .fd-act strong { color: var(--navy); }
+    .fd-row.highlight-row .fd-act strong { color: var(--white); }
+    .fd-row.highlight-row .fd-act { color: rgba(255,255,255,.9); }
+
+    /* ── TEAM TABLE ── */
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .team-col { border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 10px rgba(27,58,92,.1); }
+    .team-header {
+      padding: .75rem 1rem;
+      font-size: .82rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+    .team-header .captain { font-weight: 400; font-size: .75rem; opacity: .85; display: block; margin-top: .2rem; }
+    .team-white .team-header { background: #e8e8e8; color: #333; }
+    .team-red   .team-header { background: #c0392b; color: #fff; }
+    .team-lblue .team-header { background: #4A90C4; color: #fff; }
+    .team-dblue .team-header { background: var(--navy); color: #fff; }
+    .team-members { background: var(--white); }
+    .team-member {
+      padding: .35rem 1rem;
+      font-size: .85rem;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+      color: var(--text);
+    }
+    .team-member:last-child { border-bottom: none; }
+    .team-member.wp { font-weight: 700; color: var(--navy); background: var(--mist); }
+
+    /* ── PARKING ── */
+    .parking-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .parking-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      box-shadow: 0 2px 8px rgba(27,58,92,.07);
+      border-top: 4px solid var(--ocean);
+    }
+    .parking-card h3 { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ocean); margin-bottom: .4rem; }
+    .parking-card p  { font-size: .9rem; color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .82rem;
+    }
+    footer strong { color: var(--sky); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .tl-item { grid-template-columns: 5.5rem 1fr; gap: 0 .75rem; }
+      .fd-row { grid-template-columns: 4.5rem 1fr; }
+      nav a { padding: .65rem .5rem; font-size: .75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#thu">Thu July 2</a>
+  <a href="#fri">Fri July 3</a>
+  <a href="#sat">Sat July 4</a>
+  <a href="#sun">Sun July 5</a>
+  <a href="#jobs">Your Jobs</a>
+  <a href="#map">Island Map</a>
+  <a href="#fieldday">Field Day</a>
+  <a href="#guidelines">Guidelines</a>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero" id="overview">
+  <p class="hero-sub">Mystic, Connecticut</p>
+  <h1>Ali <em>&amp;</em> Brit</h1>
+  <p class="hero-dates">July 2 – 5, 2026 &nbsp;·&nbsp; Wedding Party Guide</p>
+  <div><span class="hero-tag">For the Wedding Party</span></div>
+  <div style="margin-top:1.5rem;">
+    <div class="contact-badge">
+      Day-of issues? &nbsp;<strong>Evan Chestnutt (Wedding Planner)</strong>&nbsp; +1 (858) 335-7996
+    </div>
+  </div>
+</header>
+
+<span class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path fill="#FAFAF7" d="M0,30 C360,70 1080,0 1440,30 L1440,60 L0,60 Z"/>
+  </svg>
+</span>
+
+<!-- ── THURSDAY ── -->
+<div class="stripe bg-white" id="thu">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Thursday · July 2</span>
+      <h2>Arrival <span>Day</span></h2>
+    </div>
+
+    <div class="info-box">
+      Wedding party arrival throughout the day and night. Find your room in <strong>Big House</strong> or <strong>Osprey House</strong>. If you're lost, call <strong>Arram</strong> or <strong>Helen</strong>.
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">All Day</div>
+        <div class="tl-body">
+          <div class="tl-title">Arrive &amp; Settle In</div>
+          <div class="tl-detail">Find your room in Big House or Osprey House. Thursday dinner is <strong>on your own</strong>.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">6 – 8 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Rehearsal Dinner (Immediate Family)</div>
+          <div class="tl-detail">Immediate family only — rest of wedding party is free this evening.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">8:30 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Chill Fire at Island Fire Spot</div>
+          <div class="tl-detail">TBD — everyone welcome</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FRIDAY ── -->
+<div class="stripe bg-mist" id="fri">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Friday · July 3</span>
+      <h2>Field Day <span>&amp; Welcome Party</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">9:00 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Field Day Setup + Self-Serve Breakfast</div>
+          <div class="tl-people"><span class="chip highlight">Helen + Biddle Family</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:00 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Wedding Rehearsal with Wedding Party</div>
+          <div class="tl-people"><span class="chip highlight">All Bridesmaids</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11 AM – 3 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Field Day!</div>
+          <div class="tl-detail">
+            Don't forget to eat and hydrate!
+            <ul>
+              <li>Food trucks: 12 – 2 PM</li>
+              <li>Coffee cart: 11 AM – 2 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">5:00 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Sabino Guests Arrive at Sabino Dock, Mystic Seaport</div>
+          <div class="tl-detail">Ali, Brit, and Wedding Party/Family take photos on Dock</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">5:30 – 7 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Sabino Cruise</div>
+          <div class="tl-detail">Wedding party + their guests, Immediate Family, Aunts/Uncles. Toasts + roasts!</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">6:30 – 10 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Welcome Party — Food, Drinks, Speeches</div>
+          <div class="tl-detail">
+            <ul>
+              <li><strong>8:00 PM</strong> — Helen Speech (just start at 8pm, no one will announce you)</li>
+              <li><strong>8:05 PM</strong> — Mona Speech</li>
+              <li><strong>8:10 PM – 10 PM</strong> — Line Dancing: Girl's Dance, Boy's Dance, Family Dance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parking-cards" style="margin-top:2rem;">
+      <div class="parking-card">
+        <h3>Parking at Mystic Seaport</h3>
+        <p>Mystic Seaport Museum — South Parking Area</p>
+      </div>
+      <div class="parking-card">
+        <h3>Sabino Dock Parking</h3>
+        <p>Sabino Dock at Mystic Seaport</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SATURDAY ── -->
+<div class="stripe bg-sand" id="sat">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Saturday · July 4</span>
+      <h2>Wedding <span>Day 🎉</span></h2>
+    </div>
+
+    <div class="alert">
+      <strong>Photos run on a tight schedule.</strong> Being even a few minutes late cascades through the entire day. Please be where you need to be, on time.
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">9:00 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Bridesmaid Hair &amp; Makeup Begins</div>
+          <div class="tl-detail">Self-serve breakfast available</div>
+          <div class="tl-people"><span class="chip highlight">All Bridesmaids</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11:30 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Sandwiches Delivered</div>
+          <div class="tl-detail">Delivered to Big House and Osprey House for all wedding party + guests</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">1:00 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Photographer Arrives at Osprey House</div>
+          <div class="tl-detail">Groomsmen dressed and ready</div>
+          <div class="tl-people"><span class="chip">Groomsmen</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:00 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Bridesmaids Dressed &amp; Ready</div>
+          <div class="tl-people"><span class="chip highlight">All Bridesmaids</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:20 – 2:50 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Immediate Family Photos</div>
+          <div class="tl-detail">Rose Garden / Front of Big House</div>
+          <div class="tl-people">
+            <span class="chip">Ruchit</span><span class="chip">Kelsey</span>
+            <span class="chip">Mom</span><span class="chip">Dad</span><span class="chip">Pat</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:50 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Wedding Party Photos</div>
+          <div class="tl-detail">Front of Big House</div>
+          <div class="tl-people"><span class="chip highlight">All Wedding Party</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">3:20 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Head Inside — Cool Off &amp; Freshen Up</div>
+          <div class="tl-detail">Drink water, use the bathroom, relax</div>
+          <div class="tl-people"><span class="chip highlight">All Wedding Party</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">3:30 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Guest Arrival on Front Lawn</div>
+          <div class="tl-detail"><em>Groom and Groomsmen outside on lawn — welcome guests and hand out programs</em></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">3:50 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Processional Line-Up</div>
+          <div class="tl-people"><span class="chip highlight">All Wedding Party</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">4:00 PM</div>
+        <div class="tl-body">
+          <div class="tl-title" style="font-size:1.05rem;">Ceremony Begins — Waterfront / Cove</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">4:30 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Biddle Extended Family Photos</div>
+          <div class="tl-detail">Wedding party goes directly to <strong>Cocktail Hour</strong></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Evening</div>
+        <div class="tl-body">
+          <div class="tl-title">Reception Speeches</div>
+          <div class="tl-detail">
+            <ul>
+              <li><strong>Parents of the Bride</strong> — Mom &amp; Dad (10 min)</li>
+              <li><strong>Kelsey</strong> (5 min)</li>
+              <li><strong>Arram</strong> (5 min)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-drive">
+      <h3>Do Not Drive Off the Island</h3>
+      <ul>
+        <li>Friday July 3: between 10 AM – 3:30 PM</li>
+        <li>Saturday July 4: after 2:30 PM</li>
+        <li>Sunday July 5: between 9:30 AM – 10:30 AM</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── SUNDAY ── -->
+<div class="stripe bg-white" id="sun">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Sunday · July 5</span>
+      <h2>Farewell <span>Brunch</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">9:00 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Cleaner Shannon Arrives at Osprey House</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">9:30 AM</div>
+        <div class="tl-body">
+          <div class="tl-title">Brunch Delivered</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10 AM – 12 PM</div>
+        <div class="tl-body">
+          <div class="tl-title">Brunch at Osprey House</div>
+          <div class="tl-detail">Shannon cleans up post-brunch</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-box" style="margin-top:1.5rem;">
+      <strong>Before you leave:</strong> Strip your sheets and place them on the floor of your room. Cleaners are coming — nothing else needed!
+    </div>
+  </div>
+</div>
+
+<!-- ── BRIDESMAID JOBS ── -->
+<div class="stripe bg-mist" id="jobs">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Your Role</span>
+      <h2>Bridesmaid <span>Special Jobs</span></h2>
+    </div>
+    <p style="font-size:.95rem; color:var(--light-text); margin-bottom:.25rem;">Every bridesmaid has a specific role for the weekend. Know yours!</p>
+
+    <div class="jobs-grid">
+
+      <div class="job-card featured">
+        <div class="job-name">Kelsey</div>
+        <div class="job-title">IN CHARGE — Point of Contact</div>
+        <div class="job-desc">She is everyone's POC for the weekend. Ask her any questions. She manages the speaker and playlist for getting ready, makes sure everyone leaves on time, and keeps the schedule on track.</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Helen</div>
+        <div class="job-title">Content Keeper</div>
+        <div class="job-desc">Has Brit's phone on wedding day and captures behind-the-scenes content. Focus on get-ready footage in the morning (before the photographer arrives at 1pm) and fun trending videos.</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Hannah &amp; Catherine</div>
+        <div class="job-title">Food, Hydration &amp; Dishwasher</div>
+        <div class="job-desc">Make sure Brit and everyone else eats breakfast and lunch on Saturday and stays hydrated. Also in charge of running and unloading the dishwasher (can be delegated to a +1).</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Liz</div>
+        <div class="job-title">Cowgirl #1 — Line Dance Lead</div>
+        <div class="job-desc">Make sure everyone knows the line dance before Friday night's Welcome Party. Round people up and get them practiced!</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Katie</div>
+        <div class="job-title">Coffee Girl</div>
+        <div class="job-desc">Start the coffee pot on Friday morning, Saturday morning, and Sunday morning. The crew is counting on you.</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Natalie</div>
+        <div class="job-title">Steaming Police</div>
+        <div class="job-desc">Make sure everyone has steamed their dress and getting-ready outfit by Friday evening. Do a sweep and hold people accountable!</div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-name">Christina</div>
+        <div class="job-title">Free Agent</div>
+        <div class="job-desc">Float and help wherever needed. Check in with others and fill any gaps.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── ISLAND MAP ── -->
+<div class="stripe bg-white" id="map">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">The Venue</span>
+      <h2>Elihu Island <span>Map</span></h2>
+    </div>
+    <p style="font-size:.95rem; color:var(--light-text); margin-bottom:1rem;">Use this to get your bearings on the island. Key locations are labeled on the map.</p>
+
+    <div class="map-container">
+      <img src="elihu-island-map.jpg" alt="Aerial map of Elihu Island showing ceremony location, cocktail hour area, parking, and after party">
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#ffffff;"></div> Ceremony (Waterfront/Cove)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#00cfff;"></div> Welcome Station (ice water &amp; iced tea)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#00cfff;"></div> Shuttle Drop-Off &amp; Flag Pole</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ffffff;"></div> Cocktail Hour</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ffd93d;"></div> Cook Tent (Location TBD)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#6bcb77;"></div> After Party</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6b6b;"></div> Parking (East side)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff6b6b;"></div> Sperry &amp; PEAK Driving Route</div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top:1.25rem;">
+      <strong>Parking:</strong> Park behind the barn when you arrive on the island.
+    </div>
+  </div>
+</div>
+
+<!-- ── FIELD DAY ── -->
+<div class="stripe bg-mist" id="fieldday">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">Friday · July 3</span>
+      <h2>Field Day <span>Schedule &amp; Teams</span></h2>
+    </div>
+
+    <div class="fd-schedule">
+      <div class="fd-row">
+        <div class="fd-time">11:00 am</div>
+        <div class="fd-act">Settle in &middot; Find your team &middot; Collect t-shirts</div>
+      </div>
+      <div class="fd-row highlight-row">
+        <div class="fd-time">11:30 am</div>
+        <div class="fd-act"><strong>Capture the Flag</strong> — everyone!</div>
+      </div>
+      <div class="fd-row highlight-row">
+        <div class="fd-time">12:15 pm</div>
+        <div class="fd-act"><strong>Field Games</strong> — Water balloon toss &middot; Egg race &middot; Hula hoop (everyone)</div>
+      </div>
+      <div class="fd-row">
+        <div class="fd-time">12:45 pm</div>
+        <div class="fd-act">
+          <div>🏐 <strong>Volleyball</strong> — 6 per team, 3 games &nbsp;|&nbsp; Lead: Bryden &amp; Natalie</div>
+          <div>🎯 <strong>Croquet</strong> — 4 per team, 2 parallel games &nbsp;|&nbsp; Lead: Catherine &amp; Hannah</div>
+          <div>🏓 <strong>Pickleball</strong> — 2 per team, 2 parallel games &nbsp;|&nbsp; Lead: Will &amp; Duncan</div>
+        </div>
+      </div>
+      <div class="fd-row highlight-row">
+        <div class="fd-time">1:45 pm</div>
+        <div class="fd-act"><strong>Paddleboard Relay Race</strong> — 4 per team, 2 boards, 3 relays</div>
+      </div>
+      <div class="fd-row">
+        <div class="fd-time">2:15 pm</div>
+        <div class="fd-act">✨ <strong>Leap of Faith</strong> — Best outfit wins! (all teams)</div>
+      </div>
+      <div class="fd-row">
+        <div class="fd-time">2:30 pm</div>
+        <div class="fd-act"><strong>Brit &amp; Ali Trivia</strong> at the Dock &middot; Hang out at the Water &nbsp;|&nbsp; Lead: Helen &amp; Andrea</div>
+      </div>
+      <div class="fd-row highlight-row">
+        <div class="fd-time">3:00 pm</div>
+        <div class="fd-act"><strong>🏆 Winners Announced!</strong></div>
+      </div>
+      <div class="fd-row">
+        <div class="fd-time">All day</div>
+        <div class="fd-act">Lunch &amp; ice cream 12–2 PM &nbsp;&middot;&nbsp; Coffee &amp; kombucha 11 AM–2 PM</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Field Day Captains (not competing):</strong> Helen Chavey &amp; Andrea Kostanecki
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--navy); margin:2rem 0 .5rem;">Team Assignments</h3>
+    <p style="font-size:.9rem; color:var(--light-text); margin-bottom:1rem;">Wedding party members highlighted in each team.</p>
+
+    <div class="teams-grid">
+      <!-- WHITE TEAM -->
+      <div class="team-col team-white">
+        <div class="team-header">White Team<span class="captain">Liz Schilling &amp; Conner Currie</span></div>
+        <div class="team-members">
+          <div class="team-member wp">Brit Biddle</div>
+          <div class="team-member wp">Ali Sabeti</div>
+          <div class="team-member wp">Liz Schilling</div>
+          <div class="team-member">Conner Currie</div>
+          <div class="team-member">Tracy Sabeti</div>
+          <div class="team-member">Arram Sabeti</div>
+          <div class="team-member">David Tam</div>
+          <div class="team-member">Jillan Tam</div>
+          <div class="team-member">Colette Tam</div>
+          <div class="team-member">Ezekiel Brustkern</div>
+          <div class="team-member">Natasha Brustkern</div>
+          <div class="team-member wp">Katie Chu</div>
+          <div class="team-member">Rohan Tilva</div>
+          <div class="team-member">Chris Kostanecki</div>
+          <div class="team-member">Jennifer Kostanecki</div>
+          <div class="team-member wp">Kelsey Biddle</div>
+          <div class="team-member">Ruchit Patel</div>
+          <div class="team-member">Caroline Biddle</div>
+          <div class="team-member">Sahana Shankar</div>
+          <div class="team-member">Jack Camoratto</div>
+          <div class="team-member">Julie Craven</div>
+          <div class="team-member">David Lund</div>
+          <div class="team-member">Viresh Patel</div>
+          <div class="team-member">Hiral Patel</div>
+          <div class="team-member">Jean Dawes</div>
+          <div class="team-member">Dania Jabal</div>
+          <div class="team-member">Adnan Fakhoury</div>
+          <div class="team-member">Mary Boyd Samuel</div>
+          <div class="team-member">Ashwanth Samuel</div>
+        </div>
+      </div>
+
+      <!-- RED TEAM -->
+      <div class="team-col team-red">
+        <div class="team-header">Red Team<span class="captain">Catherine Wood &amp; Hannah Wood</span></div>
+        <div class="team-members">
+          <div class="team-member wp">Catherine Wood</div>
+          <div class="team-member wp">Hannah Wood</div>
+          <div class="team-member">Hayk Martiros</div>
+          <div class="team-member">Henry Baer</div>
+          <div class="team-member">Rachana Jadala</div>
+          <div class="team-member">Mona Sabeti</div>
+          <div class="team-member">Arden Brandenburg</div>
+          <div class="team-member">Amer Hussaini</div>
+          <div class="team-member">Annum Hussaini</div>
+          <div class="team-member">Michael Ma</div>
+          <div class="team-member wp">Christina Craig</div>
+          <div class="team-member">Nomaan Iqbal</div>
+          <div class="team-member">Gibson Biddle</div>
+          <div class="team-member">Kristen Hege</div>
+          <div class="team-member">Willem VanderMeulen</div>
+          <div class="team-member">Lillian Caloca</div>
+          <div class="team-member">Nick Kostanecki</div>
+          <div class="team-member">Sophie Kostanecki</div>
+          <div class="team-member">Clayton Elsbree</div>
+          <div class="team-member">Annie Dawes</div>
+          <div class="team-member">John Dawes</div>
+          <div class="team-member">Laura Poppo Lockwood</div>
+          <div class="team-member">Will Lockwood</div>
+          <div class="team-member">Michael Tonneson</div>
+          <div class="team-member">Reagan Seiler</div>
+          <div class="team-member">Amy Bruce</div>
+          <div class="team-member">Matthew Bridges</div>
+          <div class="team-member">Tre Mansdoerer</div>
+          <div class="team-member">Nicky Elsbree</div>
+          <div class="team-member">Mark Elsbree</div>
+        </div>
+      </div>
+
+      <!-- LIGHT BLUE TEAM -->
+      <div class="team-col team-lblue">
+        <div class="team-header">Light Blue Team<span class="captain">Bryden Pearson &amp; Natalie Somers</span></div>
+        <div class="team-members">
+          <div class="team-member">Bryden Pearson</div>
+          <div class="team-member wp">Natalie Somers</div>
+          <div class="team-member">Aidan Pearson</div>
+          <div class="team-member">Maia Mirchandani</div>
+          <div class="team-member">Monir Abbasian</div>
+          <div class="team-member">Ali Ghandchi</div>
+          <div class="team-member">Susan Ghandchi</div>
+          <div class="team-member">Jad Abulhusn</div>
+          <div class="team-member">Raya Abulhusn</div>
+          <div class="team-member">Lance Patel</div>
+          <div class="team-member">Karen Hege</div>
+          <div class="team-member">Jamie Pearson</div>
+          <div class="team-member">Samantha VanderMeulen</div>
+          <div class="team-member">Eisso VanderMeulen</div>
+          <div class="team-member">Hadley Elsbree</div>
+          <div class="team-member">Hugh Ferguson</div>
+          <div class="team-member">Katherine Ferguson</div>
+          <div class="team-member">Laura Somers</div>
+          <div class="team-member">Patrick Somers</div>
+          <div class="team-member">Carolyn King</div>
+          <div class="team-member">Eric Nieminen</div>
+          <div class="team-member">Noah Kennedy</div>
+          <div class="team-member">Sophia Waldron</div>
+          <div class="team-member">Isa Berzansky</div>
+          <div class="team-member">Corbin Simas</div>
+          <div class="team-member">Elizabeth Sinkler</div>
+          <div class="team-member">Sam Sinkler</div>
+          <div class="team-member">Caroline Teicher</div>
+          <div class="team-member">Josh Kuppersmith</div>
+        </div>
+      </div>
+
+      <!-- DARK BLUE TEAM -->
+      <div class="team-col team-dblue">
+        <div class="team-header">Dark Blue Team<span class="captain">Will DeBruynkops &amp; Duncan Gans</span></div>
+        <div class="team-members">
+          <div class="team-member">Will DeBruynkops</div>
+          <div class="team-member">Duncan Gans</div>
+          <div class="team-member">Ellen O'Brien</div>
+          <div class="team-member">Sam VanderMeulen</div>
+          <div class="team-member">Caelin Ivanov</div>
+          <div class="team-member">Sierra Wang</div>
+          <div class="team-member">Megan Richardson</div>
+          <div class="team-member">Najmi Gorman</div>
+          <div class="team-member">Gary Gorman</div>
+          <div class="team-member">Babak Mahdavi</div>
+          <div class="team-member">Melissa Mahdavi</div>
+          <div class="team-member">Kelly Bates</div>
+          <div class="team-member">Stephen Bates</div>
+          <div class="team-member">Nancy Bates</div>
+          <div class="team-member">Patricia Wollner</div>
+          <div class="team-member">Marco VanderMeulen</div>
+          <div class="team-member">David Britton</div>
+          <div class="team-member">Christy TRUE</div>
+          <div class="team-member">David Mott</div>
+          <div class="team-member">Alice Mott</div>
+          <div class="team-member">Peter Ramsden</div>
+          <div class="team-member">Laura Ramsden</div>
+          <div class="team-member">Sophie Ghiasi</div>
+          <div class="team-member">Reeve Maddux</div>
+          <div class="team-member">Alexa Mikhail</div>
+          <div class="team-member">Carolyn Harney</div>
+          <div class="team-member">Ryan Pristo</div>
+          <div class="team-member">Hallie Horvath</div>
+          <div class="team-member">Abby Bloomfield</div>
+          <div class="team-member">Renda Ding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── GUIDELINES ── -->
+<div class="stripe bg-white" id="guidelines">
+  <div class="section">
+    <div class="section-header">
+      <span class="day-badge">All Weekend</span>
+      <h2>General <span>Guidelines</span></h2>
+    </div>
+    <ul class="guidelines">
+      <li>
+        <span class="icon">💃</span>
+        <div><strong>Learn the line dance before Friday.</strong> Liz is your resource — she'll make sure everyone knows it in time for the Welcome Party.</div>
+      </li>
+      <li class="warn">
+        <span class="icon">🛏</span>
+        <div><strong>Strip your sheets before leaving.</strong> Place them on the floor of your room. Cleaners are coming — nothing else needed!</div>
+      </li>
+      <li>
+        <span class="icon">🚗</span>
+        <div><strong>Park behind the barn</strong> when you arrive on the island.</div>
+      </li>
+      <li>
+        <span class="icon">🍽</span>
+        <div><strong>All meals are covered</strong> for wedding party + plus-ones. Fri/Sat breakfast is self-serve; Saturday lunch is sandwiches from Mystic Market. <strong>Thursday dinner is on your own.</strong> Remember to eat!</div>
+      </li>
+      <li class="warn">
+        <span class="icon">🚘</span>
+        <div>
+          <strong>Do not drive off the island during these windows:</strong>
+          <ul style="margin:.4rem 0 0 1.1rem; font-size:.9rem;">
+            <li>Friday July 3: 10 AM – 3:30 PM</li>
+            <li>Saturday July 4: after 2:30 PM</li>
+            <li>Sunday July 5: 9:30 AM – 10:30 AM</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <span class="icon">🤐</span>
+        <div><strong>Please do not ask the Bride or Groom questions</strong> on Friday or Saturday of the wedding.</div>
+      </li>
+      <li>
+        <span class="icon">🧹</span>
+        <div><strong>Please clean up after yourselves</strong> and help keep the common areas clean throughout the weekend.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>Questions? <strong>Evan Chestnutt</strong> (Wedding Planner) &nbsp;·&nbsp; <strong>+1 (858) 335-7996</strong></p>
+  <p style="margin-top:.5rem; opacity:.6;">Ali &amp; Brit · July 4, 2026 · Mystic, Connecticut</p>
+</footer>
+
+</body>
+</html>
